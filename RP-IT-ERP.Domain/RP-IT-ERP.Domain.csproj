@@ -5,4 +5,9 @@
     <RootNamespace>RP_IT_ERP.Domain</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+
 </Project>

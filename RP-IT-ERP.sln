@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RP-IT-ERP.Test", "RP-IT-ERP.Test\RP-IT-ERP.Test.csproj", "{45E7F917-3F07-4D24-8A87-8125EC46EB95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RP-IT-ERP.Test", "RP-IT-ERP.Test\RP-IT-ERP.Test.csproj", "{45E7F917-3F07-4D24-8A87-8125EC46EB95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RP-IT-ERP.Infrastructure", "RP-IT-ERP.Infrastructure\RP-IT-ERP.Infrastructure.csproj", "{C722C244-C0B7-418E-B712-5AE3C2D462E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RP-IT-ERP.Infrastructure", "RP-IT-ERP.Infrastructure\RP-IT-ERP.Infrastructure.csproj", "{C722C244-C0B7-418E-B712-5AE3C2D462E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RP-IT-ERP.Domain", "RP-IT-ERP.Domain\RP-IT-ERP.Domain.csproj", "{A9D1AE26-4F32-459F-8C83-ED0F302CCFAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RP-IT-ERP.Domain", "RP-IT-ERP.Domain\RP-IT-ERP.Domain.csproj", "{A9D1AE26-4F32-459F-8C83-ED0F302CCFAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RP-IT-ERP.Application", "RP-IT-ERP.Application\RP-IT-ERP.Application.csproj", "{10B7B1EF-69C9-4989-85F1-6595AA3716D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RP-IT-ERP.Application", "RP-IT-ERP.Application\RP-IT-ERP.Application.csproj", "{10B7B1EF-69C9-4989-85F1-6595AA3716D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{C015B045-DD6A-4F2A-AC90-A944CC49FB03}"
 EndProject
@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{5D096733-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastrcture", "Infrastrcture", "{B0A13A0F-7333-498D-B326-A37DBFDBBDA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RP-IT-ERP.API", "RP-IT-ERP.API\RP-IT-ERP.API.csproj", "{B23CAB88-6FC1-4E05-BA15-ED6ED1F9C998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RP-IT-ERP.API", "RP-IT-ERP.API\RP-IT-ERP.API.csproj", "{B23CAB88-6FC1-4E05-BA15-ED6ED1F9C998}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

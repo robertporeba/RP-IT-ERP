@@ -5,4 +5,9 @@
     <RootNamespace>RP_IT_ERP.Infrastructure</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
