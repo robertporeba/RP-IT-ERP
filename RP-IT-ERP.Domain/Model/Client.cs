@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RP_IT_ERP.Domain.Model
 {
+    [Table("Client")]
     public class Client
     {
         public int Id { get; set; }

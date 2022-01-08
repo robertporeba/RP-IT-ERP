@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RP_IT_ERP.Domain.Model
 {
-    class Task
+    [Table("Task")]
+    public class Task
     {
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
