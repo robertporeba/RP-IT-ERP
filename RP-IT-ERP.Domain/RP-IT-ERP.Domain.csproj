@@ -5,8 +5,4 @@
     <RootNamespace>RP_IT_ERP.Domain</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>
