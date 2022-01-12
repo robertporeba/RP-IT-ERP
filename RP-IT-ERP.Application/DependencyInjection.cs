@@ -15,6 +15,14 @@ namespace RP_IT_ERP.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddTransient<ITaskService, TaskService>();
+            services.AddTransient<IClientService, ClientService>();
+            services.AddTransient<IElementService, ElementService>();
+            services.AddTransient<IRaportTypeService, RaportTypeService>();
+            services.AddTransient<IRaportService, RaportService>();
+            services.AddTransient<ITaskStatusService, TaskStatusService>();
+            services.AddTransient<ITaskTypeService, TaskTypeService>();
+            services.AddTransient<IWarehouseService, WarehouseService>();
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
