@@ -10,5 +10,9 @@ namespace RP_IT_ERP.Domain.Interfaces
     public interface IClientRepository
     {
         int AddClient(Client client);
+        void DeleteClient(int clientId);
+        IQueryable<Client> GetAllClients();
+        void UpdateClient(Client client);
+        Client GetClient(int clientId);
     }
 }

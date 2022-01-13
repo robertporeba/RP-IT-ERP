@@ -21,5 +21,33 @@ namespace RP_IT_ERP.Infrastructure.Repositories
             _context.SaveChanges();
             return client.Id;
         }
+
+        public void DeleteClient(int clientId)
+        {
+            var client = _context.Clients.Find(clientId);
+            if (client != null)
+            {
+                _context.Clients.Remove(client);
+                _context.SaveChanges();
+            }
+        }
+
+        public IQueryable<Client> GetAllClients()
+        {
+            var clients = _context.Clients;
+            return clients;
+        }
+
+        public Client GetClient(int clientId)
+        {
+            var client = _context.Clients.FirstOrDefault(a => a.Id == clientId);
+            return client;
+        }
+
+        public void UpdateClient(Client client)
+        {
+            _context.Clients.Update(client);
+            _context.SaveChanges();
+        }
     }
 }
