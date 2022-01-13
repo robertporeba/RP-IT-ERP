@@ -10,5 +10,9 @@ namespace RP_IT_ERP.Domain.Interfaces
     public interface IElementRepository
     {
         int AddElement(Element element);
+        void DeleteElement(int elementId);
+        IQueryable<Element> GetAllElements();
+        void UpdateElement(Element element);
+        Element GetElement(int elementId);
     }
 }
