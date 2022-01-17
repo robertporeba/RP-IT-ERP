@@ -10,5 +10,7 @@ namespace RP_IT_ERP.Domain.Interfaces
     public interface IRaportTypeRepository
     {
         int AddRaportType(RaportType raportType);
+        void DeleteRaportType(int raportTypeId);
+        IQueryable<RaportType> GetAllRaportTypes();
     }
 }

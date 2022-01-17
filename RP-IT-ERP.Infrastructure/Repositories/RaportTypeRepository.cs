@@ -21,5 +21,21 @@ namespace RP_IT_ERP.Infrastructure.Repositories
             _context.SaveChanges();
             return raportType.Id;
         }
+
+        public void DeleteRaportType(int raportTypeId)
+        {
+            var raportType = _context.RaportTypes.Find(raportTypeId);
+            if (raportType != null)
+            {
+                _context.RaportTypes.Remove(raportType);
+                _context.SaveChanges();
+            }
+        }
+
+        public IQueryable<RaportType> GetAllRaportTypes()
+        {
+            var raportTypes = _context.RaportTypes;
+            return raportTypes;
+        }
     }
 }
