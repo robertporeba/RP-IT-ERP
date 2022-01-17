@@ -21,5 +21,27 @@ namespace RP_IT_ERP.Infrastructure.Repositories
             _context.SaveChanges();
             return warehouseItem.Id;
         }
+
+        public void DeleteWarehouseItem(int warehouseId)
+        {
+            var warehouseItem = _context.Warehouses.Find(warehouseId);
+            if (warehouseItem != null)
+            {
+                _context.Warehouses.Remove(warehouseItem);
+                _context.SaveChanges();
+            }
+        }
+
+        public IQueryable<Warehouse> GetAllWarehouseItems()
+        {
+            var warehouseItems = _context.Warehouses;
+            return warehouseItems;
+        }
+
+        public void UpdateWarehouseItem(Warehouse warehouse)
+        {
+            _context.Warehouses.Update(warehouse);
+            _context.SaveChanges();
+        }
     }
 }

@@ -10,5 +10,8 @@ namespace RP_IT_ERP.Domain.Interfaces
     public interface IWarehouseRepository
     {
         int AddWarehouseItem(Warehouse warehouseItem);
+        void DeleteWarehouseItem(int warehouseId);
+        IQueryable<Warehouse> GetAllWarehouseItems();
+        void UpdateWarehouseItem(Warehouse warehouse);
     }
 }
