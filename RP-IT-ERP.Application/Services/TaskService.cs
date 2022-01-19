@@ -35,7 +35,8 @@ namespace RP_IT_ERP.Application.Services
 
         public ListGetTasksVm GetAllTasks()
         {
-            var tasks = _taskRepository.GetAllTasks().ProjectTo<GetTaskVm>(_mapper.ConfigurationProvider).ToList();
+            var tasks = _taskRepository.GetAllTasks()
+                .ProjectTo<GetTaskVm>(_mapper.ConfigurationProvider).ToList();
             var tasksList = new ListGetTasksVm()
             {
                 Tasks = tasks
