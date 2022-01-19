@@ -15,5 +15,7 @@ namespace RP_IT_ERP.Domain.Model
         public string Name { get; set; }
         public int RaportTypeId { get; set; }
         public string Body { get; set; }
+
+        public virtual ICollection<RaportType> RaportType { get; set; }
     }
 }

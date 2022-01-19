@@ -16,5 +16,7 @@ namespace RP_IT_ERP.Domain.Model
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
         public string NIP { get; set; }
+
+        public virtual Task Task { get; set; }
     }
 }

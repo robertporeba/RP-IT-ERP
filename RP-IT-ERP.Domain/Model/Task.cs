@@ -17,5 +17,11 @@ namespace RP_IT_ERP.Domain.Model
         public int ClientId { get; set; }
         public int TaskStatusId { get; set; }
         public int TaskTypeId { get; set; }
+
+        public virtual Element Element { get; set; }
+
+        public virtual ICollection<TaskStatus> TaskStatus { get; set; }
+        public virtual ICollection<TaskType> TaskType { get; set; }
+        public virtual ICollection<Client> Client { get; set; }
     }
 }

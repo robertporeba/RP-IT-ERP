@@ -26,6 +26,22 @@ namespace RP_IT_ERP.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Domain.Model.Task>()
+                .HasMany(a => a.TaskStatus).WithOne(b => b.Task);
+
+            builder.Entity<Domain.Model.Task>()
+                .HasMany(a => a.TaskType).WithOne(b => b.Task);
+
+            builder.Entity<Domain.Model.Task>()
+                .HasMany(a => a.Client).WithOne(b => b.Task);
+
+            builder.Entity<Domain.Model.Raport>()
+                .HasMany(a => a.RaportType).WithOne(b => b.Raport);
+
+            builder.Entity<Domain.Model.Element>()
+                .HasMany(a => a.Task).WithOne(b => b.Element);
+
+
             base.OnModelCreating(builder);
         }
     }

@@ -62,7 +62,7 @@ namespace RP_IT_ERP.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "isn2018_3_backend.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RP-IT_ERP.API", Version = "v1" });
             });
         }
 
@@ -73,7 +73,7 @@ namespace RP_IT_ERP.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "isn2018_3_backend.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RP-IT_ERP.API v1"));
             }
 
             app.UseCors(x => x

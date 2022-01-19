@@ -12,5 +12,7 @@ namespace RP_IT_ERP.Domain.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public virtual Task Task { get; set; }
     }
 }

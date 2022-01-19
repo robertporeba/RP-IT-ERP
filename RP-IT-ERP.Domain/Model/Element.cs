@@ -14,5 +14,8 @@ namespace RP_IT_ERP.Domain.Model
         public string Name { get; set; }
         public int Count { get; set; }
         public int TaskId { get; set; }
+
+        public virtual ICollection<Task> Task { get; set; }
+
     }
 }
