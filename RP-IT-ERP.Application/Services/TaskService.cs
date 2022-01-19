@@ -27,5 +27,33 @@ namespace RP_IT_ERP.Application.Services
             var id = _taskRepository.AddTask(taskDto);
             return id;
         }
+
+        public void DeleteTask(int taskId)
+        {
+            _taskRepository.DeleteTask(taskId);
+        }
+
+        public ListGetTasksVm GetAllTasks()
+        {
+            var tasks = _taskRepository.GetAllTasks().ProjectTo<GetTaskVm>(_mapper.ConfigurationProvider).ToList();
+            var tasksList = new ListGetTasksVm()
+            {
+                Tasks = tasks
+            };
+            return tasksList;
+        }
+
+        public GetTaskVm GetTask(int taskId)
+        {
+            var task = _taskRepository.GetTask(taskId);
+            var taskVm = _mapper.Map<GetTaskVm>(task);
+            return taskVm;
+        }
+
+        public void UpdateTask(UpdateTaskVm task)
+        {
+            var taskDto = _mapper.Map<RP_IT_ERP.Domain.Model.Task>(task);
+            _taskRepository.UpdateTask(taskDto);
+        }
     }
 }

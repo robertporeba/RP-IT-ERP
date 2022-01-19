@@ -10,5 +10,9 @@ namespace RP_IT_ERP.Application.Interfaces
     public interface ITaskService
     {
         int AddTask(AddTaskVm task);
+        void DeleteTask(int taskId);
+        ListGetTasksVm GetAllTasks();
+        void UpdateTask(UpdateTaskVm task);
+        GetTaskVm GetTask(int taskId);
     }
 }
