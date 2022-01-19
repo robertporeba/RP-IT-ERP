@@ -27,5 +27,33 @@ namespace RP_IT_ERP.API.Controllers
             var result = _taskService.AddTask(model);
             return Ok(result);
         }
+
+        [HttpDelete("Delete")]
+        public ActionResult Delete(int id)
+        {
+            _taskService.DeleteTask(id);
+            return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public ActionResult<ListGetTasksVm> GetAll()
+        {
+            var result = _taskService.GetAllTasks();
+            return Ok(result);
+        }
+
+        [HttpPut("Update")]
+        public ActionResult Update([FromBody] UpdateTaskVm model)
+        {
+            _taskService.UpdateTask(model);
+            return Ok();
+        }
+
+        [HttpGet("Get")]
+        public ActionResult<GetTaskVm> Get(int id)
+        {
+            var result = _taskService.GetTask(id);
+            return Ok(result);
+        }
     }
 }
