@@ -10,5 +10,7 @@ namespace RP_IT_ERP.Domain.Interfaces
     public interface ITaskTypeRepository
     {
         int AddTaskType(TaskType taskType);
+        void DeleteTaskType(int taskTypeId);
+        IQueryable<TaskType> GetAllTaskTypes();
     }
 }

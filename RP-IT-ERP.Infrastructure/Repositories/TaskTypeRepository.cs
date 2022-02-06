@@ -21,5 +21,21 @@ namespace RP_IT_ERP.Infrastructure.Repositories
             _context.SaveChanges();
             return taskType.Id;
         }
+
+        public void DeleteTaskType(int taskTypeId)
+        {
+            var taskType = _context.TaskTypes.Find(taskTypeId);
+            if (taskType != null)
+            {
+                _context.TaskTypes.Remove(taskType);
+                _context.SaveChanges();
+            }
+        }
+
+        public IQueryable<TaskType> GetAllTaskTypes()
+        {
+            var taskTypes = _context.TaskTypes;
+            return taskTypes;
+        }
     }
 }
