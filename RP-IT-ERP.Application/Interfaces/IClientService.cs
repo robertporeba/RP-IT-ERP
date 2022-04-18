@@ -10,5 +10,9 @@ namespace RP_IT_ERP.Application.Interfaces
     public interface IClientService
     {
         int AddClient(AddClientVm client);
+        void DeleteClient(int clientId);
+        ListGetClientsVm GetAllClients();
+        void UpdateClient(UpdateClientVm client);
+        GetClientVm GetClient(int clientId);
     }
 }
