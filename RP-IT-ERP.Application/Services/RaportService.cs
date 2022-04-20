@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using RP_IT_ERP.Application.Interfaces;
 using RP_IT_ERP.Application.ViewModels.Raport;
 using RP_IT_ERP.Domain.Interfaces;
@@ -25,6 +26,28 @@ namespace RP_IT_ERP.Application.Services
             var raportDto = _mapper.Map<RP_IT_ERP.Domain.Model.Raport>(raport);
             var id = _raportRepository.AddRaport(raportDto);
             return id;
+        }
+
+        public void DeleteRaport(int raportId)
+        {
+            _raportRepository.DeleteRaport(raportId);
+        }
+
+        public ListGetRaportsVm GetAllRaports()
+        {
+            var raports = _raportRepository.GetAllRaports().ProjectTo<GetRaportVm>(_mapper.ConfigurationProvider).ToList();
+            var raportsList = new ListGetRaportsVm()
+            {
+                Raports = raports
+            };
+            return raportsList;
+        }
+
+        public GetRaportVm GetRaport(int raportId)
+        {
+            var raport = _raportRepository.GetRaport(raportId);
+            var raportVm = _mapper.Map<GetRaportVm>(raport);
+            return raportVm;
         }
     }
 }
