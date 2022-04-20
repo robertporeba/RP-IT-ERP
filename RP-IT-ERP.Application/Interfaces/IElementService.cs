@@ -10,5 +10,9 @@ namespace RP_IT_ERP.Application.Interfaces
     public interface IElementService
     {
         int AddElement(AddElementVm element);
+        void DeleteElement(int elementId);
+        ListGetElementsVm GetAllElements();
+        void UpdateElement(UpdateElementVm element);
+        GetElementVm GetElement(int elementId);
     }
 }
