@@ -10,5 +10,7 @@ namespace RP_IT_ERP.Application.Interfaces
     public interface ITaskTypeService
     {
         int AddTaskType(AddTaskTypeVm taskType);
+        void DeleteTaskType(int taskTypeId);
+        ListGetTaskTypesVm GetAllTaskTypes();
     }
 }

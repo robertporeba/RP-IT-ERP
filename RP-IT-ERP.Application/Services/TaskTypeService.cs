@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using RP_IT_ERP.Application.Interfaces;
 using RP_IT_ERP.Application.ViewModels.TaskType;
 using RP_IT_ERP.Domain.Interfaces;
@@ -25,6 +26,21 @@ namespace RP_IT_ERP.Application.Services
             var taskTypeDto = _mapper.Map<RP_IT_ERP.Domain.Model.TaskType>(taskType);
             var id = _taskTypeRepository.AddTaskType(taskTypeDto);
             return id;
+        }
+
+        public void DeleteTaskType(int taskTypeId)
+        {
+            _taskTypeRepository.DeleteTaskType(taskTypeId);
+        }
+
+        public ListGetTaskTypesVm GetAllTaskTypes()
+        {
+            var taskTypes = _taskTypeRepository.GetAllTaskTypes().ProjectTo<GetTaskTypesVm>(_mapper.ConfigurationProvider).ToList();
+            var taskTypesList = new ListGetTaskTypesVm()
+            {
+                TaskTypes = taskTypes
+            };
+            return taskTypesList;
         }
     }
 }

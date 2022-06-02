@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using RP_IT_ERP.Application.Interfaces;
 using RP_IT_ERP.Application.ViewModels.RaportType;
 using RP_IT_ERP.Domain.Interfaces;
@@ -25,6 +26,21 @@ namespace RP_IT_ERP.Application.Services
             var raportTypeDto = _mapper.Map<RP_IT_ERP.Domain.Model.RaportType>(raportType);
             var id = _raportTypeRepository.AddRaportType(raportTypeDto);
             return id;
+        }
+
+        public void DeleteRaportType(int raportTypeId)
+        {
+            _raportTypeRepository.DeleteRaportType(raportTypeId);
+        }
+
+        public ListGetRaportTypesVm GetAllRaportTypes()
+        {
+            var raportTypes = _raportTypeRepository.GetAllRaportTypes().ProjectTo<GetRaportTypeVm>(_mapper.ConfigurationProvider).ToList();
+            var raportTypesList = new ListGetRaportTypesVm()
+            {
+                RaportTypes = raportTypes
+            };
+            return raportTypesList;
         }
     }
 }

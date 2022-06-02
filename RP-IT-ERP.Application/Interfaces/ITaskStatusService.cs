@@ -10,5 +10,7 @@ namespace RP_IT_ERP.Application.Interfaces
     public interface ITaskStatusService
     {
         int AddTaskStatus(AddTaskStatusVm taskStatus);
+        void DeleteTaskStatus(int taskStatusId);
+        ListGetTaskStatuesVm GetAlltaskStatuses();
     }
 }

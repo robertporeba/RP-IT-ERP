@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using RP_IT_ERP.Application.Interfaces;
 using RP_IT_ERP.Application.ViewModels.TaskStatus;
 using RP_IT_ERP.Domain.Interfaces;
@@ -25,6 +26,21 @@ namespace RP_IT_ERP.Application.Services
             var taskStatusDto = _mapper.Map<RP_IT_ERP.Domain.Model.TaskStatus>(taskStatus);
             var id = _taskStatusRepository.AddTaskStatus(taskStatusDto);
             return id;
+        }
+
+        public void DeleteTaskStatus(int taskStatusId)
+        {
+            _taskStatusRepository.DeleteTaskStatus(taskStatusId);
+        }
+
+        public ListGetTaskStatuesVm GetAlltaskStatuses()
+        {
+            var taskStatuses = _taskStatusRepository.GetAlltaskStatuses().ProjectTo<GetTaskStatuesVm>(_mapper.ConfigurationProvider).ToList();
+            var taskStatusesList = new ListGetTaskStatuesVm()
+            {
+                TaskStatuses = taskStatuses
+            };
+            return taskStatusesList;
         }
     }
 }
