@@ -27,5 +27,19 @@ namespace RP_IT_ERP.API.Controllers
             var result = _taskStatusService.AddTaskStatus(model);
             return Ok(result);
         }
+
+        [HttpDelete("Delete")]
+        public ActionResult Delete(int id)
+        {
+            _taskStatusService.DeleteTaskStatus(id);
+            return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public ActionResult<ListGetTaskStatuesVm> GetAll()
+        {
+            var result = _taskStatusService.GetAlltaskStatuses();
+            return Ok(result);
+        }
     }
 }

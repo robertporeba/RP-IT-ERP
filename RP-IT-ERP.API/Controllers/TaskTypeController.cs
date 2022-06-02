@@ -27,5 +27,19 @@ namespace RP_IT_ERP.API.Controllers
             var result = _taskTypeService.AddTaskType(model);
             return Ok(result);
         }
+
+        [HttpDelete("Delete")]
+        public ActionResult Delete(int id)
+        {
+            _taskTypeService.DeleteTaskType(id);
+            return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public ActionResult<ListGetTaskTypesVm> GetAll()
+        {
+            var result = _taskTypeService.GetAllTaskTypes();
+            return Ok(result);
+        }
     }
 }

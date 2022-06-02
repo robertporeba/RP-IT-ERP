@@ -27,5 +27,19 @@ namespace RP_IT_ERP.API.Controllers
             var result = _raportTypeService.AddRaportType(model);
             return Ok(result);
         }
+
+        [HttpDelete("Delete")]
+        public ActionResult Delete(int id)
+        {
+            _raportTypeService.DeleteRaportType(id);
+            return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public ActionResult<ListGetRaportTypesVm> GetAll()
+        {
+            var result = _raportTypeService.GetAllRaportTypes();
+            return Ok(result);
+        }
     }
 }

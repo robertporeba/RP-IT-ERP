@@ -27,5 +27,26 @@ namespace RP_IT_ERP.API.Controllers
             var result = _warehouseService.AddWarehouseItem(model);
             return Ok(result);
         }
+
+        [HttpDelete("Delete")]
+        public ActionResult Delete(int id)
+        {
+            _warehouseService.DeleteWarehouseItem(id);
+            return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public ActionResult<ListGetWarehouseItemsVm> GetAll()
+        {
+            var result = _warehouseService.GetAllWarehouseItems();
+            return Ok(result);
+        }
+
+        [HttpPut("Update")]
+        public ActionResult Update([FromBody] UpdateWarehouseItemsVm model)
+        {
+            _warehouseService.UpdateWarehouseItem(model);
+            return Ok();
+        }
     }
 }

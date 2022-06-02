@@ -27,5 +27,33 @@ namespace RP_IT_ERP.API.Controllers
             var result = _elementService.AddElement(model);
             return Ok(result);
         }
+
+        [HttpDelete("Delete")]
+        public ActionResult Delete(int id)
+        {
+            _elementService.DeleteElement(id);
+            return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public ActionResult<ListGetElementsVm> GetAll()
+        {
+            var result = _elementService.GetAllElements();
+            return Ok(result);
+        }
+
+        [HttpPut("Update")]
+        public ActionResult Update([FromBody] UpdateElementVm model)
+        {
+            _elementService.UpdateElement(model);
+            return Ok();
+        }
+
+        [HttpGet("Get")]
+        public ActionResult<GetElementVm> Get(int id)
+        {
+            var result = _elementService.GetElement(id);
+            return Ok(result);
+        }
     }
 }

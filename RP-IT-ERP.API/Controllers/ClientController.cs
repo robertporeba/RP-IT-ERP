@@ -27,5 +27,33 @@ namespace RP_IT_ERP.API.Controllers
             var result = _clientService.AddClient(model);
             return Ok(result);
         }
+
+        [HttpDelete("Delete")]
+        public ActionResult Delete(int id)
+        {
+            _clientService.DeleteClient(id);
+            return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public ActionResult<ListGetClientsVm> GetAll()
+        {
+            var result = _clientService.GetAllClients();
+            return Ok(result);
+        }
+
+        [HttpPut("Update")]
+        public ActionResult Update([FromBody] UpdateClientVm model)
+        {
+            _clientService.UpdateClient(model);
+            return Ok();
+        }
+
+        [HttpGet("Get")]
+        public ActionResult<GetClientVm> Get(int id)
+        {
+            var result = _clientService.GetClient(id);
+            return Ok(result);
+        }
     }
 }
