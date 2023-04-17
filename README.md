@@ -4,7 +4,7 @@
 
 ## General info
 
-The application is designed for small and medium companies. It allows you to manage your warehouse, clients, employees as classic ERP application. Application is build in Clean Architecture.
+The application is designed for small and medium companies. It allows you to manage your warehouse, clients, employees as classic ERP application. The application is built in Clean Architecture.
 
 ## Technologies
 - .NET Core 5.0
